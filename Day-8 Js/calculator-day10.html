@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    
+    <input type="text" name="" id="display">
+    <p id="val"></p>
+
+    <button id="1" onclick="appendNumber('1')">1</button>
+    <button id="2"  onclick="appendNumber('2')">2</button>
+    <button id="3" onclick="appendNumber('3')">3</button>
+    <button id="plus" onclick="appendNumber('+')">+</button>
+    <button id="4" onclick="appendNumber('4')">4</button>
+    <button id="5" onclick="appendNumber('5')">5</button>
+    <button id="6" onclick="appendNumber('6')">6</button>
+    <button id="minus" onclick="appendNumber('-')">-</button>
+    <button id="7" onclick="appendNumber('7')">7</button>
+    <button id="8" onclick="appendNumber('8')">8</button>
+    <button id="9" onclick="appendNumber('9')">9</button>
+    <button id="multiply" onclick="appendNumber('*')">*</button>
+    <button id="0" onclick="appendNumber('0')">0</button>
+    <button id="divide" onclick="appendNumber('/')">/</button>
+    <button id="clear" onclick="cleardisplay()" >clear</button>
+    <button id="equal" onclick="compute()" >=</button>
+
+    <script>
+        var val = document.getElementById("val");
+
+        function appendNumber(number){
+            var output = document.getElementById("display").value+=number;
+        }
+
+        function compute(){
+            try{
+                var output = document.getElementById("display").value;
+                var result = eval(output);
+                document.getElementById("display").value = result;
+                val.innerText = result;
+            }
+            catch(err){
+                alert("Error")
+            }
+            
+        }
+
+        function cleardisplay(){
+            document.getElementById("display").value = "";
+        }
+
+
+    </script>
+
+</body>
+</html>
