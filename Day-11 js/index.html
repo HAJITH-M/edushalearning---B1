@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day - 11</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <form action="" id="form">
+        <div class="flex flex-col gap-4">
+            <label for="username">UserName</label>  
+            <input class="border-2 border-black" type="text" name="username" id="username">
+
+            <label for="password">Password</label>
+            <input class="border-2 border-black" type="password" name="password" id="password">
+            <button class="border-2 border-black">Submit</button>
+
+        </div>
+    </form>
+
+    <script>
+
+        const form = document.getElementById("form");
+        const username = document.getElementById("username")
+        const password = document.getElementById("password")
+
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            if(username.value == 'admin' && password.value == 123)
+            {
+                alert('Login Success')
+            }
+            else
+            {
+                alert('Login Failed')
+            }
+        })
+
+
+    </script>
+
+</body>
+</html>

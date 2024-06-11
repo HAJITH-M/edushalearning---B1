@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" id="form">
+        <label for="username">UserName</label>  
+        <input class="border-2 border-black" type="text" name="username" id="username">
+
+        <label for="password">Password</label>
+        <input  type="password" name="password" id="password">
+        <button>Submit</button>
+    </form>
+
+    <script>
+        // create json file with 5 username and 5 password
+
+        const users = [
+            {
+                username:"hajith", 
+                password:"123"
+            },
+            {
+                username:"hajith1",
+                password:"1234"
+            },
+            {
+                username:"ram",
+                password:"12345"
+            },
+            {
+                username:"sam", 
+                password:"123456"
+            },
+            {
+                username:"hajith4",
+                password:"1234567"
+            },
+        ]
+
+        const form = document.getElementById("form");
+
+        form.addEventListener('submit', (event)=>{
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const user = users.find((userNP) =>{
+                return userNP.username === username && userNP.password === password
+            })
+
+            if(user){
+                alert("Login Success")
+                console.log("Authorized person")
+                // targeting to next page
+                window.location.href = "wecome.html"
+            }
+            else{
+                alert("Login Failed")
+                console.log("Unauthorized person")
+            }
+        })
+
+    </script>
+</body>
+</html>
